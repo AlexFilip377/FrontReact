@@ -24,7 +24,7 @@ function Courses() {
             <h1>Доступные курсы</h1>
 
             <button onClick={toggleSort} style={{ marginBottom: '15px', padding: '8px 12px', cursor: 'pointer' }}>
-                Сортировка: {sortOrder.toUpperCase()} {sortOrder === "" ? "^" : "v"}
+                Сортировка: {sortOrder.toUpperCase()} {sortOrder === "asc" ? "^" : "v"}
             </button>
 
             <ul style={{ listStyle: 'none', padding: 0 }}>

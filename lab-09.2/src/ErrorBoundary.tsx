@@ -1,0 +1,32 @@
+import { Component, type ReactNode } from "react";
+
+interface Props {
+  children: ReactNode;
+}
+
+interface State {
+  hasError: boolean;
+  error: Error | null;
+}
+
+export class ErrorBoundary extends Component<Props, State> {
+  state: State = { hasError: false, error: null };
+
+  static getDerivedStateFromError(error: Error): State {
+    return { hasError: true, error };
+  }
+
+  render() {
+    if (this.state.hasError && this.state.error) {
+      return (
+        <div style={{ padding: "24px", fontFamily: "system-ui", maxWidth: "600px", margin: "0 auto" }}>
+          <h2 style={{ color: "#c00" }}>Ошибка приложения</h2>
+          <pre style={{ background: "#f5f5f5", padding: "16px", overflow: "auto" }}>
+            {this.state.error.message}
+          </pre>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}

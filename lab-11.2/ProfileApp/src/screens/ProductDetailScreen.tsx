@@ -21,7 +21,7 @@ export function ProductDetailScreen({ route }: any) {
 
         <View style={styles.platformInfo}>
           <Text style={styles.platformText}>
-            Viewing on: {Platform.OS === 'ios' ? '📱 iOS' : '🤖 Android'}
+            Viewing on: {Platform.OS === 'ios' ? 'iOS' : 'Android'}
           </Text>
           <Text style={styles.platformVersion}>OS Version: {Platform.Version}</Text>
         </View>

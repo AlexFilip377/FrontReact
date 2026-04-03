@@ -8,7 +8,6 @@ export function ProductListScreen({ navigation }: any) {
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
-    // Имитация загрузки данных
     await new Promise(resolve => setTimeout(resolve, 1500));
     setRefreshing(false);
   }, []);

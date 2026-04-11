@@ -6,10 +6,10 @@ import {
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/types";
 
-type ProfileScreenProps = NativeStackScreenProps<RootStackParamList, 'Profile'>;
+type ProfileScreenProps = NativeStackScreenProps<RootStackParamList, 'Profile' | 'ProfileMain'>;
 
 export default function ProfileScreen({ navigation, route}: ProfileScreenProps) {
-    const { userId } = route.params;
+    const userId = route.params?.userId ?? 'default';
 
     const profileData = {
         id: userId,
